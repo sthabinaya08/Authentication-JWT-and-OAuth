@@ -11,11 +11,13 @@ from .serializers import RegisterSerializer, LoginSerializer, UserSerializer, OA
 from .utils import verify_google_id_token, send_password_reset_email
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
 class RegisterView(generics.CreateAPIView):
     permission_classes = (permissions.AllowAny,)
     serializer_class = RegisterSerializer
+    parser_classes = [MultiPartParser, FormParser]
 
 
 class LoginTokenView(APIView):
