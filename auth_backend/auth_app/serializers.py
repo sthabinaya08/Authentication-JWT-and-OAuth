@@ -48,7 +48,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ("id", "email", "first_name", "last_name", "phone",
-                  "address", "role", "avatar", "date_joined")
+                  "address", "role", "avatar", "date_joined", "bio")
 
 
 class OAuthAccountSerializer(serializers.ModelSerializer):
